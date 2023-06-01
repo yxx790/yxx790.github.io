@@ -12,24 +12,28 @@
 git init               инициализация(добавляет папку гит р проект)
 
 git status                                   статус файлов
-git status -s                            сокрощенный статус
+U untracked     M modyfied       A added
+
 можно создать файл .gitignore в нем записывать файлы для игнора
 
-git add .                                   добавить все файлы
+git add .       ИЛИ        git add -A           добавить все файлы
 
 git restore filename                восстановить M modyfied file
 
-git commit -m "first commit"                     commit
+git commit -m "comment about change"                     commit
 "Short detail message about changes"
 
-git commit -a -m "first commit"                  add + commit
+git commit -a -m "comment about change"                  add + commit
 
 git commit -a          откроется окно, нужно ввести описание
 
         привязка к гитхабу
 git remote add origin https://github.com/yxx790/yxx790.github.io.git
 git branch -M main
-git push -u origin main             пушить на гитхаб
+git push -u origin main             пушить на гитхаб(первый раз)
+git push                            пушить
 
 $ git config --global credential.helper 'cache --timeout=36000' не работает
 закэшировать логопас на гитхаб на 10 часов
+
+git log                             посмотреть лог
