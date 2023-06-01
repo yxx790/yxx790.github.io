@@ -36,4 +36,4 @@ git push                            пушить
 $ git config --global credential.helper 'cache --timeout=36000' не работает
 закэшировать логопас на гитхаб на 10 часов
 
-git log                             посмотреть лог
+git log                             посмотреть log
