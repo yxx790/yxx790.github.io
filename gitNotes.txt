@@ -1,0 +1,35 @@
+ git --version              git -v
+ git config --global user.name "yxx790"         задать пользователя
+ git config user.name                           проверка пользователя
+ git config --global user.email "yxx790@gmail.com"
+ git config  user.email                         проверка gjxns
+ git config --global init.defaultBranch main
+ git config init.defaultBranch                  проверка
+
+ git clone https://github.com/gitdagray/git-code-playground.git
+ копировать папку с чужим проектом
+
+git init               инициализация(добавляет папку гит р проект)
+
+git status                                   статус файлов
+git status -s                            сокрощенный статус
+можно создать файл .gitignore в нем записывать файлы для игнора
+
+git add .                                   добавить все файлы
+
+git restore filename                восстановить M modyfied file
+
+git commit -m "first commit"                     commit
+"Short detail message about changes"
+
+git commit -a -m "first commit"                  add + commit
+
+git commit -a          откроется окно, нужно ввести описание
+
+        привязка к гитхабу
+git remote add origin https://github.com/yxx790/yxx790.github.io.git
+git branch -M main
+git push -u origin main             пушить на гитхаб
+
+$ git config --global credential.helper 'cache --timeout=36000' не работает
+закэшировать логопас на гитхаб на 10 часов

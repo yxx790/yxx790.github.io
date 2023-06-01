@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BlackJack</title> 
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/header.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="Images/favicon_io/site.webmanifest">
+</head>
+
+<body> 
+    <link href="CSS/blackjack.css" rel="stylesheet">
+    <header>
+    </header>
+
+
+<div id="BJ">
+    <h3>BlackJack</h3>
+    <div>
+        <div class="line1">
+            <img class="cat"src="Images/blackjack/cat.png"alt="">
+            <div class="wins1">
+                <br><p>WINS:</p><br>
+                <p>Cat</p>
+                <p id="catsWins">0</p>
+                <p id="yourWins">0</p>
+                <p>You</p>
+            </div>
+        </div>
+        <div id="catsCards"></div>
+        <div class="middle">
+            <div class="m1">
+                <img class="cat"src="Images/blackjack/0.jpg"alt="deck">
+            </div>
+            <div class="m2">
+                <span id="catsScore">0</span>
+                <p id="tablo">Your turn</p>
+                <div>
+                <button id="takecard" onclick = "youTakeCard()">Take Card</button>
+                <button id="pass" onclick = "pass()">Pass</button>
+                </div>
+                <span id="yourScore">0</span>
+            </div>
+            <div class="wins2">
+                <br><p>WINS:</p><br>
+                <p>Cat</p>
+                <p id="catsWins">0</p>
+                <p id="yourWins">0</p>
+                <p>You</p>
+            </div>
+        </div>
+        <div id="yourCards"></div>
+        <div id="imgpreload" style="display: none;">
+    </div>
+    </div>
+</div>
+    <script src="JS/header.js"></script>
+    <script src="JS/blackjack.js"></script>
+</body>
+</html>
+

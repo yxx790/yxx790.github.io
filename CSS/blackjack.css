@@ -1,0 +1,205 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+*::selection{ /*задает цвет выделения прозрачным*/
+    background-color:rgba(0, 0, 0, 0);
+} 
+
+h3{
+    margin-top: 1svh;
+}
+
+#BJ{
+    padding-inline: 2v;
+    display:inline-block;
+    margin-top: 4svh;
+    padding-inline: 0;
+    padding-bottom: 0;
+ }
+
+#BJ>div{
+    padding: 1svh;
+    display:inline-block;
+    border-radius: 1vh;
+    margin-top: 1svh;
+    width: 85vw;
+    width: 92svw;
+    max-width: 1200px;
+    height: 88svh;
+    background: conic-gradient(
+        from var(--gradient-angle),
+        rgb(255, 0, 149),
+        rgb(255, 251, 0),
+        rgb(81, 255, 0),
+        rgb(25, 0, 255),
+        rgb(255, 0, 149));
+    animation: rotation 7s linear infinite;
+}
+@property --gradient-angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes rotation{
+    0%  { --gradient-angle: 0deg;}
+    100%{ --gradient-angle: 360deg;}
+}
+
+.line1{
+    height:30svh;
+    background-color: #757575;
+    display:flex;
+    justify-content:space-around ;
+}
+
+.wins1,
+.wins2{
+    background-color: rgba(53, 80, 57, 0.274);
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.wins1 p,
+.wins2 p{
+    text-align: center;
+    width: 12svh;
+}
+
+#catsCards{
+    height:15svh;
+    background-color: rgb(30, 102, 42);
+    display:flex;
+    justify-content:space-around ;
+}
+
+.middle{
+    height:26.6svh;
+    background-color: rgb(54, 121, 65);
+    display:flex;
+}
+
+.m1{
+    width: 25%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.m1>img{
+    margin-left: 2vw;
+    height: 70%;
+    border-radius: 4.5px;
+    max-width: 100%;
+}
+
+.m2{
+    display:flex;
+    flex-direction: column;
+    /* background-color: rgb(112, 112, 112); */
+    flex-grow: 1;
+
+}
+
+#catsScore,#yourScore{
+    margin-left: 2vw;
+    font-size: calc(3svh);
+    font-weight: bold;
+    font-family: consolas, calibri, arial;
+    color: #4ecf84;
+    text-align: left;
+}
+
+#yourScore{
+    margin-top: auto;
+}
+
+#tablo{
+    margin-top: auto;
+    text-align: center;
+    font-size: calc(5svh);
+}
+
+#takecard, #pass{
+    margin-top: 2vh;
+    margin-inline: 1svw;
+    padding: 0.5svh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    background-color: #505050;
+    color: #dbdbdb;
+    font-family: "Verdana", "Tahoma";
+    font-size: 2.5vh;
+    border: calc(0.3vh) solid;
+    border-radius: 100vmax;
+    color: #49ff77;
+}
+
+#takecard:hover, #pass:hover {
+    background-color: rgb(112, 112, 112);
+}
+
+.wins2{
+    display: none;
+}
+
+#yourCards, #catsCards{
+    height:15svh;
+    background-color: rgb(30, 102, 42);
+    display:flex;
+    justify-content:left;
+    align-items: center;
+    padding: 0.3vh;
+} 
+
+#yourCards>img, #catsCards>img{
+    height: 85%;
+    border-radius: 4.5px;
+    min-width: 30px;
+}
+
+@media(width<350px){
+    .m1{
+        display: none;
+    }
+}
+
+@media(height<400px){
+    header{
+        display: none;
+    }
+    #BJ{
+        margin-top: 0;
+    }
+    #BJ>div{
+        max-width: 300px;
+        height: 96svh;
+        height: 96dvh;
+    }
+    h3{
+        display: none;
+    }
+    .line1{
+        display: none;
+    }
+    .wins1{
+        display: block;
+    }
+    #yourCards, #catsCards{
+        height:29svh;
+        height:2dsvh;
+    }
+    .middle{
+        height:36.6svh;
+        height:36.6dvh;
+    }
+    .wins2{
+        display: block;
+        /* width: 10vw; */
+        background-color: #505050a8;
+        font-size: 3vh;
+    }
+}

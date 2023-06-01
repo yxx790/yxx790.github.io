@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: linear-gradient(#505050, #222222);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Press Start 2P", consolas, calibri, arial;
+    color: #d8d8d8;
+    font-size: 2vh;
+    text-align: center;
+    animation: 10s linear 0s infinite running myColor;
+}
+
+@keyframes myColor {
+    50% {
+        color: #505050;
+    }
+}
+a {
+    text-decoration: none;
+    color:  rgb(219, 219, 219);
+}
+
+p {
+    padding: 0.5vh;
+    font-family: consolas, calibri, arial;
+    color: #4ecf84;
+    text-align: left;
+}
+
+#Page{
+    padding-inline: 2v;
+    display:inline-block;
+    padding-inline: 3vw;
+    margin-top: 4svh;
+    padding-bottom: 2vh;
+ }
+
+#Page>div{
+    max-width: 1600px;
+    margin-top: 1vh;
+    padding: 1svh;
+    background-color: #75757550;
+    display:inline-block;
+    border-radius: 1vh;
+}
+
+section{
+    margin-top: 40px;
+}

@@ -1,0 +1,61 @@
+header {
+    justify-content:center;
+    display: flex;
+    background-color: #505050;
+    border-bottom: 2px solid;
+    border-color: #70ffa7;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header>div{
+    display: flex;
+}
+
+header button{
+    padding-inline: 15px;
+    transition: all 0.3s;
+    background-color: #505050;
+    color: #dbdbdb;
+    font-family: "Verdana", "Tahoma";
+    font-size: 2vh;
+    /* height: 3.5vh; */
+    /* font-size: 18px; */
+    /* height: 30px; */
+    border-style:none;
+    border-radius: 3vh;
+}
+
+header button:hover {
+    background-color: rgb(112, 112, 112);
+    color: #49ff77;
+}
+
+.headmenu{
+    font-size: 2.3vh;
+    display: none;
+}
+
+@media(max-width:900px){
+    header{
+        justify-content:space-between;
+    }
+ 
+    header>div>div{
+        flex-direction: column;
+        display: none;
+    }
+    .headmenu{
+        display: block;
+    }
+
+    header>div:hover .headlist{
+        background-color:#505050;
+        display:flex;
+        position: absolute;
+        top: 3vh;
+    }
+
+}
+

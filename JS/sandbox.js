@@ -1,0 +1,64 @@
+"use strict";
+// const okCancel = confirm("OK or Cancel");//результат true or false
+// alert(okCancel);
+// const name = prompt("Введите ваше имя","Igor");//результат всегда string
+// alert("Привет " + name);
+// const age = +prompt("Введите возраст","33");//результат number (плюс перед string)
+// alert(age);
+// alert('!!!!!!!!!!!!!!');
+let nmbr = 10;
+console.log(nmbr++);//выводит 10, потом прибавляет 1
+let nmbr2 = 10;
+console.log(--nmbr2);//вычитает 1, выводит результат
+console.log(10%3);//выводит остаток от деления
+console.log(2*4 == 8);//true
+console.log(2*4 == "8");//true
+console.log(2*4 === 8);//true
+console.log(2*4 === "8");//false
+// %% И     || ИЛИ      ! ОТРИЦАНИЕ
+
+timeUpdate();
+setInterval(timeUpdate, 1000);
+function timeUpdate(){
+    let date = new Date();
+    // let ms = date.getMilliseconds();
+    document.querySelector("#p1").textContent = 
+        `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`;
+}
+
+getWindowSize();
+window.addEventListener('resize', getWindowSize);
+// window.onresize = getWindowSize;
+function getWindowSize(){
+    document.querySelector("#p2").textContent = `window.innerHeight = ${window.innerHeight}`;
+    document.querySelector("#p3").textContent = `window.innerWidth = ${window.innerWidth}`;
+    document.querySelector("#p4").textContent = `window.devicePixelRatio = ${window.devicePixelRatio}`;
+    console.log('window was resized');
+};
+
+console.log(navigator);//информация о браузере
+document.querySelector("#p5").textContent = `
+    ${navigator.appCodeName}
+    ${navigator.appName}
+    ${navigator.appVersion}
+`;
+
+const object1 = {//пример возможносных вариантов описания объекта
+    name: 'Igor',
+    'surname': "Kryuchkov",
+    3: 33,
+};
+object1.city = 'Nizhnevartovsk';//добавление ключа в существующий объект
+object1['nickname'] = "yxx790";
+document.querySelector("#p6").textContent = `
+    ${object1["name"]}
+    ${object1.surname}
+    ${object1["nickname"]}
+    ${object1[3]}y.o.
+    ${object1["city"]}
+`
+let arr = ["массив это частный вид объекта",
+    " в котором вместо ключей используется индексы.",
+    " И объекты и функции могут содержать в себе любые типы данных в т.ч. функции"
+];
+document.querySelector("#p7").textContent = arr;
