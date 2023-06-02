@@ -61,6 +61,7 @@ function youTakeCard() {
         document.getElementById("catsWins").innerHTML ++;
         setTimeout(() => {resetAll(); }, 2000);
     }
+    // (yourScore == 21) ? pass() : continue;
     if(yourScore == 21){
         pass();
     }
@@ -72,12 +73,12 @@ function pass(){
     document.getElementById("pass").style.display ="none";
     if (catsScore <= yourScore && catsScore != 21){
             setTimeout(() => {catTakeCard(); pass(); }, 800);
-            }
+        }
     else if(catsScore>21){
         document.getElementById("tablo").innerHTML = "You WIN!";
         document.getElementById("yourWins").innerHTML ++;
         setTimeout(() => {resetAll(); }, 2000);
-    }
+        }
     else if(catsScore <=21 && catsScore > yourScore){
         document.getElementById("tablo").innerHTML = "You lost";
         document.getElementById("tablo").style.color = "red";

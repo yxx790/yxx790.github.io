@@ -28,7 +28,7 @@ a {
     color:  rgb(219, 219, 219);
 }
 
-p {
+p, pre {
     padding: 0.5vh;
     font-family: consolas, calibri, arial;
     color: #4ecf84;
