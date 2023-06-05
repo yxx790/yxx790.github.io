@@ -10,10 +10,10 @@ console.log(typeof usedDeck);
 
 
 
-document.querySelector("#takecard").style.display="none";
-document.querySelector("#pass").style.display="none";
+// document.querySelector("#takecard").style.display="none";
+// document.querySelector("#pass").style.display="none";
 
-const preloadIMG = () =>{
+// const preloadIMG = () =>{
     for (var i = 1; i < 53; i++){
         let preloadcard = document.createElement("img");
         preloadcard.src = `Images/blackjack/${i}.jpg`;
@@ -22,11 +22,11 @@ const preloadIMG = () =>{
         // if (i = 52){
             youTakeCard();
             catTakeCard();
-            document.querySelector("#takecard").style.display="inline";
-            document.querySelector("#pass").style.display="inline";
+            // document.querySelector("#takecard").style.display="inline";
+            // document.querySelector("#pass").style.display="inline";
         // }
-}
-preloadIMG();
+// }
+// preloadIMG();
 
 function youTakeCard() {
     random = getRandom ();
@@ -54,17 +54,18 @@ function youTakeCard() {
     document.getElementById("yourScore").textContent = yourScore + " (" + yourPack + ")";
     
     if(yourScore>21){
-        document.getElementById("tablo").innerHTML = "You lost";
-        document.getElementById("tablo").style.color = "red";
-        document.getElementById("takecard").style.display ="none";
-        document.getElementById("pass").style.display = "none";
-        document.getElementById("catsWins").innerHTML ++;
-        setTimeout(() => {resetAll(); }, 2000);
+        catWin();
+        // document.getElementById("tablo").innerHTML = "You lost";
+        // document.getElementById("tablo").style.color = "red";
+        // document.getElementById("takecard").style.display ="none";
+        // document.getElementById("pass").style.display = "none";
+        // document.getElementById("catsWins").innerHTML ++;
+        // setTimeout(() => {resetAll(); }, 2000);
     }
-    // (yourScore == 21) ? pass() : continue;
-    if(yourScore == 21){
-        pass();
-    }
+    if (yourScore == 21) pass();
+    // if(yourScore == 21){
+    //     pass();
+    // }
 };
 
 function pass(){
@@ -75,21 +76,23 @@ function pass(){
             setTimeout(() => {catTakeCard(); pass(); }, 800);
         }
     else if(catsScore>21){
-        document.getElementById("tablo").innerHTML = "You WIN!";
-        document.getElementById("yourWins").innerHTML ++;
-        setTimeout(() => {resetAll(); }, 2000);
+        youWin();
+        // document.getElementById("tablo").innerHTML = "You WIN!";
+        // document.getElementById("yourWins").innerHTML ++;
+        // setTimeout(() => {resetAll(); }, 2000);
         }
     else if(catsScore <=21 && catsScore > yourScore){
-        document.getElementById("tablo").innerHTML = "You lost";
-        document.getElementById("tablo").style.color = "red";
-        document.getElementById("catsWins").innerHTML ++;
-        setTimeout(() => {resetAll(); }, 2000);
+        catWin();
+        // document.getElementById("tablo").innerHTML = "You lost";
+        // document.getElementById("tablo").style.color = "red";
+        // document.getElementById("catsWins").innerHTML ++;
+        // setTimeout(() => {resetAll(); }, 2000);
         }
     else{
         document.getElementById("tablo").innerHTML = "Draw";
         document.getElementById("tablo").style.color = "yellow";
-        document.getElementById("catsWins").innerHTML ++;
-        document.getElementById("yourWins").innerHTML ++;
+        // document.getElementById("catsWins").innerHTML ++;
+        // document.getElementById("yourWins").innerHTML ++;
         setTimeout(() => {resetAll(); }, 2000);
         }
 }
@@ -134,6 +137,21 @@ function resetAll(){
     catTakeCard();
 }
 
+function youWin(){
+    document.getElementById("tablo").innerHTML = "You WIN!";
+    document.getElementById("yourWins").innerHTML ++;
+    setTimeout(() => {resetAll(); }, 2000);
+}
+
+function catWin(){
+    document.getElementById("tablo").innerHTML = "You lost";
+    document.getElementById("tablo").style.color = "red";
+    document.getElementById("takecard").style.display ="none";
+    document.getElementById("pass").style.display = "none";
+    document.getElementById("catsWins").innerHTML ++;
+    setTimeout(() => {resetAll(); }, 2000);
+}
+
 function getRandom (){
     do{
         random = Math.floor(Math.random() * 52) + 1;
@@ -176,18 +194,5 @@ function getRealValye (random){
     }
     return realValye;
 }
-
-
-// document.getElementById("catsWins").onclick = setwins2;
-// document.getElementById("catsWins").addEventListener("", setwins2)
-
-// function setwins2(){
-//     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!");
-//     document.getElementById("catsWins2").textContent =
-//     document.getElementById("catsWins").textContent;
-
-//     document.querySelector("yourWins2").textContent = 
-//     document.querySelector("yourWins").textContent;
-// }
 
 
