@@ -11,11 +11,33 @@ let usedDeck=[],
 // console.log(typeof usedDeck);
 // console.log(navigator.cookieEnabled);
 
-function getCookies(){
-    const cDecoded = decodeURIComponent(Document.cookie);
-    console.log(cDecoded);
-}
-getCookies();
+// function getCookies(){
+
+const cDecoded = decodeURIComponent(document.cookie);
+console.log("cookie get \n" + cDecoded);
+let cArray = cDecoded.split("; ");
+console.log(cArray);
+
+cArray.forEach(element => {
+    if(element.indexOf("yourWins=") == 0){
+        // yourWins = element.substring(9);
+        yourWins = element.substring("yourWins=".length);
+        // yourWins = 0;
+    }
+    if(element.indexOf("catsWins=") == 0){
+        // catsWins = element.substring(9);
+        catsWins = element.substring("catsWins=".length);
+        // catsWins = 0;
+    }
+})    
+// console.log(yourWins);
+// console.log(catsWins);
+// document.getElementById("catsWins").innerHTML = catsWins;
+// document.getElementById("catsWins2").innerHTML = catsWins;
+// document.getElementById("yourWins").innerHTML = yourWins;
+// document.getElementById("yourWins2").innerHTML = yourWins;
+
+setCookies();
 
 // document.querySelector("#takecard").style.display="none";
 // document.querySelector("#pass").style.display="none";
@@ -149,8 +171,8 @@ function resetAll(){
 function youWin(){
     document.getElementById("tablo").innerHTML = "You WIN!";
     yourWins ++;
-    document.getElementById("yourWins").innerHTML = yourWins;
-    document.getElementById("yourWins2").innerHTML =yourWins;
+    // document.getElementById("yourWins").innerHTML = yourWins;
+    // document.getElementById("yourWins2").innerHTML = yourWins;
     setCookies();
     setTimeout(() => {resetAll(); }, 2000);
 }
@@ -161,20 +183,25 @@ function catWin(){
     document.getElementById("takecard").style.display ="none";
     document.getElementById("pass").style.display = "none";
     catsWins ++;
-    document.getElementById("catsWins").innerHTML = catsWins;
-    document.getElementById("catsWins2").innerHTML = catsWins;
+    // document.getElementById("catsWins").innerHTML = catsWins;
+    // document.getElementById("catsWins2").innerHTML = catsWins;
     setCookies();
     setTimeout(() => {resetAll(); }, 2000);
 }
 
 function setCookies(){
+    document.getElementById("catsWins").innerHTML = catsWins;
+    document.getElementById("catsWins2").innerHTML = catsWins;
+    document.getElementById("yourWins").innerHTML = yourWins;
+    document.getElementById("yourWins2").innerHTML = yourWins;
+
     const date = new Date();
     const huorsToLive = 1;
     date.setTime(date.getTime() + huorsToLive * 60 * 60 * 1000);
     let expires = "expires=" + date.toUTCString();
     document.cookie = `yourWins=${yourWins}; ${expires}`;
     document.cookie = `catsWins=${catsWins}; ${expires}`;  
-    console.log(document.cookie);
+    console.log("cookie set \n" + document.cookie);
 }
 
 function getRandom (){
