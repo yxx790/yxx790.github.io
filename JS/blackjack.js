@@ -4,11 +4,18 @@ let usedDeck=[],
     catsPack=[],
     yourScore=0,
     catsScore=0,
+    yourWins=0,
+    catsWins=0,
     random,
     realValye;
-console.log(typeof usedDeck);
+// console.log(typeof usedDeck);
+// console.log(navigator.cookieEnabled);
 
-
+function getCookies(){
+    const cDecoded = decodeURIComponent(Document.cookie);
+    console.log(cDecoded);
+}
+getCookies();
 
 // document.querySelector("#takecard").style.display="none";
 // document.querySelector("#pass").style.display="none";
@@ -34,14 +41,14 @@ function youTakeCard() {
     usedDeck.sort((a , b) => (a - b));
     yourScore += getRealValye(random);
     yourPack.push(realValye);
-    console.log("yourPack ", yourPack);
-
+    
+    console.log("yourPack ", yourPack.toString());
     console.log("yourScore ", yourScore);
     if (yourScore > 21 && yourPack.indexOf(11) != -1) {
         yourPack[yourPack.indexOf(11)] = 1;
         yourScore -= 10;
+        console.log("yourPack ", yourPack.toString());
         console.log("yourScore ", yourScore);
-        console.log("yourPack ", yourPack);
     }
 
     // document.getElementById("yourCards").innerHTML +=
@@ -51,7 +58,7 @@ function youTakeCard() {
     newcard.src = `Images/blackjack/${random}.jpg`;
     document.querySelector("#yourCards").append(newcard);
 
-    document.getElementById("yourScore").textContent = yourScore + " (" + yourPack + ")";
+    document.getElementById("yourScore").textContent = `${yourScore} (${yourPack})`;
     
     if(yourScore>21){
         catWin();
@@ -73,7 +80,11 @@ function pass(){
     document.getElementById("takecard").style.display ="none";
     document.getElementById("pass").style.display ="none";
     if (catsScore <= yourScore && catsScore != 21){
-            setTimeout(() => {catTakeCard(); pass(); }, 800);
+            setTimeout(() =>
+            {
+                catTakeCard();
+                pass();
+            }, 800);
         }
     else if(catsScore>21){
         youWin();
@@ -91,8 +102,6 @@ function pass(){
     else{
         document.getElementById("tablo").innerHTML = "Draw";
         document.getElementById("tablo").style.color = "yellow";
-        // document.getElementById("catsWins").innerHTML ++;
-        // document.getElementById("yourWins").innerHTML ++;
         setTimeout(() => {resetAll(); }, 2000);
         }
 }
@@ -103,20 +112,20 @@ function catTakeCard() {
     usedDeck.sort((a , b) => (a - b));
     catsScore += getRealValye(random);
     catsPack.push(realValye);
-    console.log("catsPack ", catsPack);
-
+    
+    console.log("catsPack ", catsPack.toString());
     console.log("catsScore ", catsScore);
     if (catsScore > 21 && catsPack.indexOf(11) != -1) {
         catsPack[catsPack.indexOf(11)] = 1;
         catsScore -= 10;
+        console.log("catsPack ", catsPack.toString());
         console.log("catsScore ", catsScore);
-        console.log("catsPack ", catsPack);
     }
 
     document.getElementById("catsCards").innerHTML +=
     `<img class="cat"src="Images/blackjack/${random}.jpg"alt="">`;
-    document.getElementById("catsScore").innerHTML = catsScore+ " (" + catsPack + ")";
-
+    document.getElementById("catsScore").innerHTML = `${catsScore} (${catsPack})`;
+    
 };
 
 function resetAll(){
@@ -139,7 +148,10 @@ function resetAll(){
 
 function youWin(){
     document.getElementById("tablo").innerHTML = "You WIN!";
-    document.getElementById("yourWins").innerHTML ++;
+    yourWins ++;
+    document.getElementById("yourWins").innerHTML = yourWins;
+    document.getElementById("yourWins2").innerHTML =yourWins;
+    setCookies();
     setTimeout(() => {resetAll(); }, 2000);
 }
 
@@ -148,8 +160,21 @@ function catWin(){
     document.getElementById("tablo").style.color = "red";
     document.getElementById("takecard").style.display ="none";
     document.getElementById("pass").style.display = "none";
-    document.getElementById("catsWins").innerHTML ++;
+    catsWins ++;
+    document.getElementById("catsWins").innerHTML = catsWins;
+    document.getElementById("catsWins2").innerHTML = catsWins;
+    setCookies();
     setTimeout(() => {resetAll(); }, 2000);
+}
+
+function setCookies(){
+    const date = new Date();
+    const huorsToLive = 1;
+    date.setTime(date.getTime() + huorsToLive * 60 * 60 * 1000);
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = `yourWins=${yourWins}; ${expires}`;
+    document.cookie = `catsWins=${catsWins}; ${expires}`;  
+    console.log(document.cookie);
 }
 
 function getRandom (){
