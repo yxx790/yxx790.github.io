@@ -196,7 +196,7 @@ function setCookies(){
     document.getElementById("yourWins2").innerHTML = yourWins;
 
     const date = new Date();
-    const huorsToLive = 1;
+    const huorsToLive = 168;//168h = week
     date.setTime(date.getTime() + huorsToLive * 60 * 60 * 1000);
     let expires = "expires=" + date.toUTCString();
     document.cookie = `yourWins=${yourWins}; ${expires}`;
