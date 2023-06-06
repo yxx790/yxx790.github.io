@@ -104,8 +104,8 @@ function pass(){
     if (catsScore <= yourScore && catsScore != 21){
             setTimeout(() =>
             {
-                catTakeCard();
-                pass();
+                catTakeCard(pass);
+                // pass();
             }, 800);
         }
     else if(catsScore>21){
@@ -128,7 +128,7 @@ function pass(){
         }
 }
 
-function catTakeCard() {
+function catTakeCard(callbackPass) {
     random = getRandom ();
     usedDeck.push(random);
     usedDeck.sort((a , b) => (a - b));
@@ -147,7 +147,7 @@ function catTakeCard() {
     document.getElementById("catsCards").innerHTML +=
     `<img class="cat"src="Images/blackjack/${random}.jpg"alt="">`;
     document.getElementById("catsScore").innerHTML = `${catsScore} (${catsPack})`;
-    
+    if (callbackPass) callbackPass();
 };
 
 function resetAll(){
