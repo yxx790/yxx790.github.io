@@ -124,7 +124,7 @@ function resetAll(){
 }
 
 function youWin(){
-    document.getElementById("tablo").innerHTML = "You WIN!";
+    document.getElementById("tablo").innerHTML = "You WIN!😎";
     yourWins ++;
     // document.getElementById("yourWins").innerHTML = yourWins;
     // document.getElementById("yourWins2").innerHTML = yourWins;
@@ -133,7 +133,7 @@ function youWin(){
 }
 
 function catWin(){
-    document.getElementById("tablo").innerHTML = "You lost";
+    document.getElementById("tablo").innerHTML = "You lost😒";
     document.getElementById("tablo").style.color = "red";
     document.getElementById("takecard").style.display ="none";
     document.getElementById("pass").style.display = "none";
