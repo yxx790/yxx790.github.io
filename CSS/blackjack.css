@@ -15,7 +15,7 @@ h3{
 #BJ{
     padding-inline: 2v;
     display:inline-block;
-    margin-top: 4svh;
+    /* margin-top: 4svh; */
     padding-inline: 0;
     padding-bottom: 0;
  }
@@ -28,7 +28,7 @@ h3{
     width: 85vw;
     width: 92svw;
     max-width: 1200px;
-    height: 88svh;
+    height: 90svh;
     background: conic-gradient(
         from var(--gradient-angle),
         rgb(255, 0, 149),
@@ -147,7 +147,7 @@ h3{
 }
 
 #yourCards, #catsCards{
-    height:15svh;
+    height:16svh;
     background-color: rgb(30, 102, 42);
     display:flex;
     justify-content:left;

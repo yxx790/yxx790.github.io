@@ -5,6 +5,7 @@ header {
     border-bottom: 2px solid;
     border-color: #70ffa7;
     position: fixed;
+    position:sticky;
     width: 100%;
     top: 0;
 }
