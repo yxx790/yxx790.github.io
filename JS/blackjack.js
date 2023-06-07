@@ -11,8 +11,6 @@ let usedDeck=[],
 // console.log(typeof usedDeck);
 // console.log(navigator.cookieEnabled);
 
-// function getCookies(){
-
 const cDecoded = decodeURIComponent(document.cookie);
 console.log("cookie get \n" + cDecoded);
 let cArray = cDecoded.split("; ");
@@ -20,42 +18,25 @@ console.log(cArray);
 
 cArray.forEach(element => {
     if(element.indexOf("yourWins=") == 0){
-        // yourWins = element.substring(9);
         yourWins = element.substring("yourWins=".length);
         // yourWins = 0;
     }
     if(element.indexOf("catsWins=") == 0){
-        // catsWins = element.substring(9);
         catsWins = element.substring("catsWins=".length);
         // catsWins = 0;
     }
 })    
-// console.log(yourWins);
-// console.log(catsWins);
-// document.getElementById("catsWins").innerHTML = catsWins;
-// document.getElementById("catsWins2").innerHTML = catsWins;
-// document.getElementById("yourWins").innerHTML = yourWins;
-// document.getElementById("yourWins2").innerHTML = yourWins;
-
 setCookies();
 
-// document.querySelector("#takecard").style.display="none";
-// document.querySelector("#pass").style.display="none";
 
-// const preloadIMG = () =>{
-    for (var i = 1; i < 53; i++){
-        let preloadcard = document.createElement("img");
-        preloadcard.src = `Images/blackjack/${i}.jpg`;
-        document.querySelector("#imgpreload").append(preloadcard);
-    }
-        // if (i = 52){
-            youTakeCard();
-            catTakeCard();
-            // document.querySelector("#takecard").style.display="inline";
-            // document.querySelector("#pass").style.display="inline";
-        // }
-// }
-// preloadIMG();
+for (var i = 1; i < 53; i++){
+    let preloadcard = document.createElement("img");
+    preloadcard.src = `Images/blackjack/${i}.jpg`;
+    document.querySelector("#imgpreload").append(preloadcard);
+}
+
+youTakeCard();
+catTakeCard();
 
 function youTakeCard() {
     random = getRandom ();
@@ -72,29 +53,14 @@ function youTakeCard() {
         console.log("yourPack ", yourPack.toString());
         console.log("yourScore ", yourScore);
     }
-
     // document.getElementById("yourCards").innerHTML +=
     // `<img class="cat"src="Images/blackjack/${random}.jpg"alt="">`;
-
     let newcard = document.createElement("img");
     newcard.src = `Images/blackjack/${random}.jpg`;
     document.querySelector("#yourCards").append(newcard);
-
     document.getElementById("yourScore").textContent = `${yourScore} (${yourPack})`;
-    
-    if(yourScore>21){
-        catWin();
-        // document.getElementById("tablo").innerHTML = "You lost";
-        // document.getElementById("tablo").style.color = "red";
-        // document.getElementById("takecard").style.display ="none";
-        // document.getElementById("pass").style.display = "none";
-        // document.getElementById("catsWins").innerHTML ++;
-        // setTimeout(() => {resetAll(); }, 2000);
-    }
+    if(yourScore>21) {catWin();};
     if (yourScore == 21) pass();
-    // if(yourScore == 21){
-    //     pass();
-    // }
 };
 
 function pass(){
@@ -102,24 +68,13 @@ function pass(){
     document.getElementById("takecard").style.display ="none";
     document.getElementById("pass").style.display ="none";
     if (catsScore <= yourScore && catsScore != 21){
-            setTimeout(() =>
-            {
-                catTakeCard(pass);
-                // pass();
-            }, 800);
+            setTimeout(() => {catTakeCard(pass);}, 800);
         }
     else if(catsScore>21){
         youWin();
-        // document.getElementById("tablo").innerHTML = "You WIN!";
-        // document.getElementById("yourWins").innerHTML ++;
-        // setTimeout(() => {resetAll(); }, 2000);
         }
     else if(catsScore <=21 && catsScore > yourScore){
         catWin();
-        // document.getElementById("tablo").innerHTML = "You lost";
-        // document.getElementById("tablo").style.color = "red";
-        // document.getElementById("catsWins").innerHTML ++;
-        // setTimeout(() => {resetAll(); }, 2000);
         }
     else{
         document.getElementById("tablo").innerHTML = "Draw";
