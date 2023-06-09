@@ -57,7 +57,7 @@ function youTakeCard() {
     // `<img class="cat"src="Images/blackjack/${random}.jpg"alt="">`;
     let newcard = document.createElement("img");
     newcard.src = `Images/blackjack/${random}.jpg`;
-    document.querySelector("#yourCards").append(newcard);
+    document.querySelector("#yourCards").append(newcard);//preppend вставляет в начало
     document.getElementById("yourScore").textContent = `${yourScore} (${yourPack})`;
     if(yourScore>21) {catWin();};
     if (yourScore == 21) pass();
