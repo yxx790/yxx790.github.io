@@ -133,7 +133,7 @@ function youWin(){
 }
 
 function catWin(){
-    document.getElementById("tablo").innerHTML = "You lost😒";
+    document.getElementById("tablo").innerHTML = "You lost";
     document.getElementById("tablo").style.color = "red";
     document.getElementById("takecard").style.display ="none";
     document.getElementById("pass").style.display = "none";
