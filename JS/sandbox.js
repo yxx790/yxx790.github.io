@@ -1,4 +1,23 @@
 "use strict";
+//ЗАМЫКАНИЯ  CLOSURES  //смысл в том чтобы
+//спрятать переменную A в лексич окружении функции
+//и управлять ей через переданную функцию
+//после выполн. родительской ф. переменн продолж существовать
+function varCreator(){
+    let a = 0;
+    function innerFunc(){//в лексич окруж фнкц будет
+            a++;        //сохранена ссылка на переменную А
+            return a    //которая находится внутри функц
+        }
+    return innerFunc
+}
+const b = varCreator();//в пер помещ varCreator и запуск, после
+const c = varCreator();//в пер присваивается innerFunc
+//переменная A будет разная, т.к фнкц b и c это разные функции
+console.log("b="+b()); console.log("c="+c()); console.log("b="+b());
+console.log("c="+c()); console.log("c="+c()); console.log("b="+b());
+
+
 // const okCancel = confirm("OK or Cancel");//результат true or false
 // alert(okCancel);
 // const name = prompt("Введите ваше имя","Igor");//результат всегда string
