@@ -1,5 +1,6 @@
 
-*{
+*, *::before, *::after{
+    box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
@@ -76,7 +77,7 @@ h3{
 }
 
 .middle{
-    height:26.6svh;
+    height:26svh;
     background-color: rgb(54, 121, 65);
     display:flex;
 }
@@ -177,8 +178,8 @@ h3{
     }
     #BJ>div{
         max-width: 300px;
-        height: 96svh;
-        height: 96dvh;
+        height: 96.6svh;
+        height: 96.6dvh;
     }
     h3{
         display: none;
