@@ -38,6 +38,7 @@ for (var i = 1; i < 53; i++){
 youTakeCard();
 catTakeCard();
 
+document.querySelector('#takecard').addEventListener('click', youTakeCard);
 function youTakeCard() {
     random = getRandom ();
     usedDeck.push(random);
@@ -57,13 +58,16 @@ function youTakeCard() {
     // `<img class="cat"src="Images/blackjack/${random}.jpg"alt="">`;
     let newcard = document.createElement("img");
     newcard.src = `Images/blackjack/${random}.jpg`;
-    document.querySelector("#yourCards").append(newcard);//preppend вставляет в начало
-    //или before / after чтобы вставить до или после siblings
+    document.querySelector("#yourCards").append(newcard);
+    //append в коней/ preppend вставляет в начало в родителя
+    // before / after чтобы вставить до или после siblings
+    //remove()    replacewith(чтото)
     document.getElementById("yourScore").textContent = `${yourScore} (${yourPack})`;
     if(yourScore>21) {catWin();};
     if (yourScore == 21) pass();
 };
 
+document.querySelector('#pass').addEventListener('click', pass);
 function pass(){
     document.getElementById("tablo").innerHTML = "Wait cat";
     document.getElementById("takecard").style.display ="none";
