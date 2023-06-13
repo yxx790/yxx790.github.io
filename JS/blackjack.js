@@ -10,6 +10,8 @@ let usedDeck=[],
     realValye;
 // console.log(typeof usedDeck);
 // console.log(navigator.cookieEnabled);
+document.getElementById("takecard").style.display ="none";
+document.getElementById("pass").style.display ="none";
 
 const cDecoded = decodeURIComponent(document.cookie);
 console.log("cookie get \n" + cDecoded);
@@ -35,10 +37,16 @@ for (var i = 1; i < 53; i++){
     document.querySelector("#imgpreload").append(preloadcard);
 }
 
+
+document.addEventListener("DOMContentLoaded", () =>{
 youTakeCard();
 catTakeCard();
-
+document.getElementById("takecard").style.display ="inline";
+document.getElementById("pass").style.display ="inline";
 document.querySelector('#takecard').addEventListener('click', youTakeCard);
+document.querySelector('#pass').addEventListener('click', pass);
+});
+
 function youTakeCard() {
     random = getRandom ();
     usedDeck.push(random);
@@ -67,7 +75,6 @@ function youTakeCard() {
     if (yourScore == 21) pass();
 };
 
-document.querySelector('#pass').addEventListener('click', pass);
 function pass(){
     document.getElementById("tablo").innerHTML = "Wait cat";
     document.getElementById("takecard").style.display ="none";
