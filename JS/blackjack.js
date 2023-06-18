@@ -7,7 +7,8 @@ let usedDeck=[],
     yourWins=0,
     catsWins=0,
     random,
-    realValye;
+    realValye,
+    consoleLogGroup = 0;
 // console.log(typeof usedDeck);
 // console.log(navigator.cookieEnabled);
 document.getElementById("takecard").style.display ="none";
@@ -47,7 +48,13 @@ document.querySelector('#takecard').addEventListener('click', youTakeCard);
 document.querySelector('#pass').addEventListener('click', pass);
 });
 
+
 function youTakeCard() {
+    if (consoleLogGroup == 0) {
+        console.group(`партия`);
+        consoleLogGroup +=1;
+    };
+
     random = getRandom ();
     usedDeck.push(random);
     usedDeck.sort((a , b) => (a - b));
@@ -91,6 +98,9 @@ function pass(){
     else{
         document.getElementById("tablo").innerHTML = "Draw";
         document.getElementById("tablo").style.color = "yellow";
+        console.log("DRAW");
+        console.groupEnd();
+        consoleLogGroup = 0;
         setTimeout(() => {resetAll(); }, 2000);
         }
 }
@@ -140,6 +150,9 @@ function youWin(){
     yourWins ++;
     // document.getElementById("yourWins").innerHTML = yourWins;
     // document.getElementById("yourWins2").innerHTML = yourWins;
+    console.log("YOU WIN");
+    console.groupEnd();
+    consoleLogGroup = 0;
     setCookies();
     setTimeout(() => {resetAll(); }, 2000);
 }
@@ -152,6 +165,9 @@ function catWin(){
     catsWins ++;
     // document.getElementById("catsWins").innerHTML = catsWins;
     // document.getElementById("catsWins2").innerHTML = catsWins;
+    console.log("CAT WIN");
+    console.groupEnd();
+    consoleLogGroup = 0;
     setCookies();
     setTimeout(() => {resetAll(); }, 2000);
 }
