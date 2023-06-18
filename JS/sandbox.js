@@ -29,13 +29,13 @@ console.log("c="+c()); console.log("c="+c()); console.log("b="+b());
 // console.log(nmbr++);//выводит 10, потом прибавляет 1
 // let nmbr2 = 10;
 // console.log(--nmbr2);//вычитает 1, выводит результат
-// console.log(10%3);//выводит остаток от деления
+// console.log(10 % 3);//выводит остаток от деления = 1
 // console.log(2*4 == 8);//true
 // console.log(2*4 == "8");//true
 // console.log(2*4 === 8);//true
 // console.log(2*4 === "8");//false
 // %% И     || ИЛИ      ! ОТРИЦАНИЕ
-(50 == 59) ? console.log(true) : console.log(false);
+// (51 == 50) ? console.log(true) : console.log(false);
 //сравнение с использ тернарного оператора 
 if ("sdf"){console.log(true)};
 //true  это любая цифра, не 0 , строка и тд
