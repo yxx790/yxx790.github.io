@@ -1,21 +1,18 @@
 "use strict";
-//ЗАМЫКАНИЯ  CLOSURES  //смысл в том чтобы
-//спрятать переменную A в лексич окружении функции
-//и управлять ей через переданную функцию
-//после выполн. родительской ф. переменн продолж существовать
-function varCreator(){
+
+function varCreator() {
     let a = 0;
-    function innerFunc(){//в лексич окруж фнкц будет
-            a++;        //сохранена ссылка на переменную А
-            return a    //которая находится внутри функц
-        }
+    function innerFunc() {//в лексич окруж фнкц будет
+        a++;        //сохранена ссылка на переменную А
+        return a    //которая находится внутри функц
+    }
     return innerFunc
 }
 const b = varCreator();//в пер помещ varCreator и запуск, после
 const c = varCreator();//в пер присваивается innerFunc
 //переменная A будет разная, т.к фнкц b и c это разные функции
-console.log("b="+b()); console.log("c="+c()); console.log("b="+b());
-console.log("c="+c()); console.log("c="+c()); console.log("b="+b());
+console.log("b=" + b()); console.log("c=" + c()); console.log("b=" + b());
+console.log("c=" + c()); console.log("c=" + c()); console.log("b=" + b());
 
 
 // const okCancel = confirm("OK or Cancel");//результат true or false
@@ -37,53 +34,52 @@ console.log("c="+c()); console.log("c="+c()); console.log("b="+b());
 // %% И     || ИЛИ      ! ОТРИЦАНИЕ
 // (51 == 50) ? console.log(true) : console.log(false);
 //сравнение с использ тернарного оператора 
-if ("sdf"){console.log(true)};
+if ("sdf") { console.log(true) };
 //true  это любая цифра, не 0 , строка и тд
 //false  это пустая строка, 0, null, NaN, undefined
 
 
-timeUpdate();
-setInterval(timeUpdate, 1000);
-function timeUpdate(){
+// timeUpdate();
+setInterval(timeUpdate, 100);
+function timeUpdate() {
     let date = new Date();
     // let ms = date.getMilliseconds();
-    document.querySelector("#p1").textContent = 
+    document.querySelector("#p1").textContent =
         `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`;
 }
 
 getWindowSize();
 window.addEventListener('resize', getWindowSize);
 // window.onresize = getWindowSize;
-function getWindowSize(){
+function getWindowSize() {
     document.querySelector("#p2").textContent = `window.innerHeight = ${window.innerHeight}`;
     document.querySelector("#p3").textContent = `window.innerWidth = ${window.innerWidth}`;
     document.querySelector("#p4").textContent = `window.devicePixelRatio = ${window.devicePixelRatio}`;
     console.log('window was resized');
-};
+}
 
-// console.log(navigator);//информация о браузере
-document.querySelector("#p5").textContent = `
-    ${navigator.appCodeName}
-    ${navigator.appName}
-    ${navigator.appVersion}
-`;
-
-const object1 = {//пример возможносных вариантов описания объекта
-    name: 'Igor',
-    'surname': "Kryuchkov",
-    3: 33,
-};
-object1.city = 'Nizhnevartovsk';//через точку лучше не использовать
-object1['nickname'] = "yxx790";//добавление ключа + значения в существующий объект
-document.querySelector("#p6").textContent = `
-    ${object1["name"]}
-    ${object1.surname}
-    ${object1["nickname"]}
-    ${object1[3]}y.o.
-    ${object1["city"]}
-`
-let arr = ["массив это частный вид объекта",
-    " в котором вместо ключей используется индексы.",
-    " И объекты и функции могут содержать в себе любые типы данных в т.ч. функции"
-];
-document.querySelector("#p7").textContent = arr;
+//openweathermap.org    635e4bb4a2d55584188f0d4900c2bfbb
+//weatherstack.com    c40920722586a582568c86c1e52e1d10
+//api.tomorrow.io   2dEuNJ3O2NYIQIWUAxQiCM88xUNQoJ8E
+weatherRequest();
+setInterval(weatherRequest, 60000);
+function weatherRequest() {
+    const xhr = new XMLHttpRequest();
+    // xhttp.open("GET", "https://api.tomorrow.io/v4/timelines?location=60.9386,76.58192&fields=temperature&timesteps=current&units=metric&apikey=2dEuNJ3O2NYIQIWUAxQiCM88xUNQoJ8E", true);
+    xhr.open("GET", `https://api.openweathermap.org/data/2.5/weather?lat=60.9386&lon=76.58192&units=metric&appid=635e4bb4a2d55584188f0d4900c2bfbb`, true);
+    //xhttp.setRequestHeader("","") 
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            const response = JSON.parse(this.response)
+            console.log(response);
+            // let tempC = response["data"]["timelines"][0].intervals[0].values.temperature
+            // let tempC = response["main"].temp
+            document.querySelector("#p5").innerHTML =
+                response.name + " " + response.main.temp.toFixed(1) + " C " + "<br>" +
+                "humidity: " + response.main.humidity + "<br>" +
+                response.weather[0].description + "<br>" +
+                response.wind.deg + " deg " + response.wind.speed + " m/c";
+        }
+    }
+    xhr.send();
+}
