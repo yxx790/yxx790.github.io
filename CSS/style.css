@@ -9,10 +9,12 @@
 }
 
 body {
-    background: linear-gradient(#505050, #222222);
+    background-color: #505050;
+    /* background: linear-gradient(#505050, #222222); */
     /* background-repeat: no-repeat; */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     text-align: center;
+    /* height: 130dvh; */
 }
 
 h3 {
