@@ -11,7 +11,7 @@
 body {
     background: linear-gradient(#505050, #222222);
     /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     text-align: center;
 }
 
