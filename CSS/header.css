@@ -1,11 +1,11 @@
 header {
+    /* position: fixed; */
+    position:sticky;
     justify-content:center;
     display: flex;
     background-color: #505050;
     border-bottom: 2px solid;
     border-color: #70ffa7;
-    position: fixed;
-    position:sticky;
     width: 100%;
     top: 0;
 }
