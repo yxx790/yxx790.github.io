@@ -74,7 +74,7 @@ function getGeolocation(){
         function error({ message }) {
             console.log(message)
             document.querySelector("#p5").innerHTML = 'No geolocation info';
-            document.querySelector("#p5").innerHTML = 'No geolocation info';
+            document.querySelector("#p6").innerHTML = 'No geolocation info';
         }
 }
 
