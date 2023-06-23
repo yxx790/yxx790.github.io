@@ -42,7 +42,9 @@ header button:hover {
     header{
         justify-content:space-between;
     }
- 
+    header button{
+        font-size: 3.5vh;
+    }
     header>div>div{
         flex-direction: column;
         display: none;
@@ -55,7 +57,7 @@ header button:hover {
         background-color:#505050;
         display:flex;
         position: absolute;
-        top: 3vh;
+        top: 4.0vh;
     }
 
 }
