@@ -38,6 +38,20 @@ if ("sdf") { console.log(true) };
 //true  это любая цифра, не 0 , строка и тд
 //false  это пустая строка, 0, null, NaN, undefined
 
+getIP()
+function getIP() {
+    fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_fviqDW3imjlokWPIJjiFkc8Hf1RoP`)
+        .then(response => response.json())
+        .then(obj => {
+            console.log(obj);
+            document.querySelector("#p0").innerHTML = "ip: " + obj.ip + 
+            "<br>" + obj.as.route +
+            "<br>" + obj.isp +
+            "<br>" + obj.as.domain +
+            "<br>" + obj.as.type+
+            "<br>" + obj.location.country +" "+ obj.location.region
+        })
+}
 
 // timeUpdate();
 setInterval(timeUpdate, 100);
@@ -63,7 +77,7 @@ function getWindowSize() {
 //api.tomorrow.io   2dEuNJ3O2NYIQIWUAxQiCM88xUNQoJ8E
 const appid = "635e4bb4a2d55584188f0d4900c2bfbb";
 getGeolocation();
-setInterval(getGeolocation, 60000);
+setInterval(getGeolocation, 5*60*1000);
 function getGeolocation() {
     navigator.geolocation.getCurrentPosition(success, error, { enableHighAccuracy: true })
     function success({ coords }) {
@@ -109,3 +123,5 @@ function weatherForecast(latitude, longitude) {
                 " " + element.main.temp.toFixed(0));
         })
 }
+
+
