@@ -61,27 +61,28 @@ function getWindowSize() {
 //openweathermap.org    635e4bb4a2d55584188f0d4900c2bfbb
 //weatherstack.com    c40920722586a582568c86c1e52e1d10
 //api.tomorrow.io   2dEuNJ3O2NYIQIWUAxQiCM88xUNQoJ8E
+const appid = "635e4bb4a2d55584188f0d4900c2bfbb";
 getGeolocation();
 setInterval(getGeolocation, 60000);
-function getGeolocation(){
-    navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true})
-        function success({ coords }) {
-            const { latitude, longitude } = coords
-            console.log('latitude', latitude,'longitude',longitude)
-            document.querySelector("#p5").innerHTML = 'latitude '+ latitude +'<br>'+ 'longitude ' +longitude;
-            weatherRequest(latitude, longitude)
-        }  
-        function error({ message }) {
-            console.log(message)
-            document.querySelector("#p5").innerHTML = 'No geolocation info';
-            document.querySelector("#p6").innerHTML = 'No geolocation info';
-        }
+function getGeolocation() {
+    navigator.geolocation.getCurrentPosition(success, error, { enableHighAccuracy: true })
+    function success({ coords }) {
+        const { latitude, longitude } = coords
+        console.log('latitude', latitude, 'longitude', longitude)
+        document.querySelector("#p5").innerHTML = 'latitude ' + latitude + '<br>' + 'longitude ' + longitude;
+        weatherRequest(latitude, longitude)
+        weatherForecast(latitude, longitude)
+    }
+    function error({ message }) {
+        console.log(message)
+        document.querySelector("#p5").innerHTML = 'No geolocation info';
+        document.querySelector("#p6").innerHTML = 'No geolocation info';
+    }
 }
 
 function weatherRequest(latitude, longitude) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=635e4bb4a2d55584188f0d4900c2bfbb`, true);
-    // xhr.open("GET", `https://api.openweathermap.org/data/2.5/weather?lat=60.9386&lon=76.58192&units=metric&appid=635e4bb4a2d55584188f0d4900c2bfbb`, true);
+    xhr.open("GET", `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${appid}`, true);
     xhr.onload = function () {
         if (xhr.status == 200) {
             const response = JSON.parse(this.response)
@@ -90,8 +91,21 @@ function weatherRequest(latitude, longitude) {
                 response.name + " " + response.main.temp.toFixed(1) + " C " + "<br>" +
                 "humidity: " + response.main.humidity + "<br>" +
                 response.weather[0].description + "<br>" +
-                response.wind.deg + " deg " + response.wind.speed + " m/c";
+                "wind " + response.wind.deg + " deg " + response.wind.speed + " m/c";
         }
     }
     xhr.send();
+}
+
+function weatherForecast(latitude, longitude) {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${appid}`)
+        .then(response => response.json())
+        .then(obj => {
+            console.log(obj);
+            // obj.list.shift();
+            document.querySelector("#p7").innerHTML = "3 hours forecast: ";
+            obj.list.forEach(element =>
+                document.querySelector("#p7").innerHTML +=
+                " " + element.main.temp.toFixed(0));
+        })
 }
