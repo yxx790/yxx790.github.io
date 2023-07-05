@@ -72,7 +72,7 @@ function youTakeCard() {
     //append в коней/ preppend вставляет в начало в родителя
     // before / after чтобы вставить до или после siblings
     //remove()    replacewith(чтото)
-    document.getElementById("yourScore").textContent = `${yourScore} (${yourPack})`;
+    document.getElementById("yourScore").textContent = `${yourScore} (${yourPack})`.replace(/,/g," ");
     if(yourScore>21) {catWin();};
     if (yourScore == 21) pass();
 };
@@ -117,7 +117,7 @@ function catTakeCard(callbackPass) {
 
     document.getElementById("catsCards").innerHTML +=
     `<img class="cat"src="Images/blackjack/${random}.jpg"alt="">`;
-    document.getElementById("catsScore").innerHTML = `${catsScore} (${catsPack})`;
+    document.getElementById("catsScore").innerHTML = `${catsScore} (${catsPack})`.replace(/,/g," ");
     if (callbackPass) callbackPass();
 };
 

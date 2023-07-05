@@ -37,6 +37,9 @@ console.log("c=" + c()); console.log("c=" + c()); console.log("b=" + b());
 if ("sdf") { console.log(true) };
 //true  это любая цифра, не 0 , строка и тд
 //false  это пустая строка, 0, null, NaN, undefined
+const s = '123, 3213,4234 2343';
+console.log(s.replace(/, /,",").replace(/ /,",").split(','))
+
 
 getIP()
 function getIP() {
