@@ -16,4 +16,4 @@ for (let age = 18; age < 100; age++) {
         `<option value="${age}">${age}</option>`
 }
 
-
+document.querySelector("#id").innerHTML = WebAppUser.id;
