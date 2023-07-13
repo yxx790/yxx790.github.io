@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed dating</title>
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest"> -->
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script defer type="module" src="script.js"></script>
+</head>
+
+<body>
+
+    <nav class="headGroup">
+        <div id="profile" class="activeBtn">
+            <img src="img/flaticon/user.png" alt="Ваш профиль">
+        </div>
+        <div id="lenta">
+            <img src="img/flaticon/search.png" alt="Смотреть анкеты">
+        </div>
+        <div id="likes">
+            <img src="img/flaticon/heart.png" alt="Вы понравились">
+        </div>
+        <div id="messages">
+            <img src="img/flaticon/envelope.png" alt="Переписки">
+        </div>
+    </nav>
+
+
+    <main class="page">
+        <div class="profilePage">
+            <div>profile photo</div>
+            <div>
+                <!-- <hr> -->
+                <form action="">
+                    <div>
+
+                        <input type="text" name="inputName" id="inputName" placeholder="имя">
+
+                        <pre> </pre>
+
+                        <select name="userAge" id="userAge">
+                            <!-- <option value=""></option> -->
+                            <!-- сюда вставляется список возрастов -->
+                        </select>
+
+                        <pre>лет пол</pre>
+
+                        <select name="sex" id="sex">
+                            <option value="М">М</option>
+                            <option value="Ж">Ж</option>
+                        </select>
+
+                    </div>
+                    <div>
+
+                        <select id="region" name="region" list="regionList">
+                            <option value="Регион">регион</option>
+                            <option value="Регипропроонапрапр">регпропрпопроапр</option>
+                            <option value="Регион">регион</option>
+                            <option value="Регион">регион</option>
+                        </select>
+
+                        <select id="city" name="city" list="cityList" placeholder="город">
+                            <option value="город">город</option>
+                            <option value="Нижневартовск">Нижневартовск</option>
+                            <option value="ЕКБ">ЕКБ</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <!-- <textarea name="inputComent" id="inputComent" rows="5"></textarea> -->
+                        <input type="text" name="inputComent" id="inputComent" placeholder="раскажите о себе">
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+        <div class="lentaPage" hidden>
+            <div>lenta photo</div>
+            <div>lenta</div>
+        </div>
+        <div class="likesPage" hidden>
+            <div>likes 1</div>
+            <div>likes 2</div>
+        </div>
+        <div class="messagesPage" hidden>
+            <div>messages 1</div>
+            <div>messages 2</div>
+        </div>
+    </main>
+
+</body>
+
+
+
+
+</html>

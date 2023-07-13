@@ -1,0 +1,98 @@
+:root {
+    --bntFilterDay: brightness(100%) contrast(50%);
+    --bntFilterDayActive: invert(42%) sepia(93%) saturate(1352%) hue-rotate(260deg);
+    --background: hsl(171, 100%, 97%);
+    --headmenu: hsl(216, 100%, 56%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.headGroup {
+    display: flex;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+    height: 10dvh;
+
+    /* background-color: var(--headmenu); */
+}
+
+.headGroup>div {
+    flex: 1 1 0;
+    text-align: center;
+    overflow: hidden;
+    font-size: 6.8dvh;
+}
+
+nav>div>img {
+    filter: var(--bntFilterDay);
+    height: 5dvh;
+    margin-top: 2.5dvh;
+}
+
+.activeBtn>* {
+    filter: var(--bntFilterDayActive);
+}
+
+[hidden] {
+    display: none;
+}
+
+.page {
+    /* background-color: hsl(195, 39%, 69%); */
+    height: 90dvh;
+}
+
+main>div {
+    display: flex;
+    flex-direction: column;
+}
+
+main>div>div {
+    /* background-color: hsl(195, 39%, 69%); */
+    margin: 1dvh 1dvw 0;
+    height: 44dvh;
+}
+
+p, label, input, div, select, textarea{
+    font-family: monospace, sans-serif;
+    font-size: 2.5dvh;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);
+    /* display: inline; */
+
+}
+form>div{
+    display: flex;
+    margin-bottom: 1.5dvh;
+}
+input, select:not(#userAge,#sex){
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+@media(orientation: landscape) {
+    main>div {
+        flex-direction: row;
+    }
+
+    main>div>div {
+        /* background-color: hsl(195, 39%, 69%); */
+        margin: 1dvh 1dvw 0 0;
+        height: 89dvh;
+        width: 50dvw;
+    }
+    p, label, input, div, select, textarea{
+        font-family: monospace, sans-serif;
+        font-size: 2.5dvw;
+        font-weight: bold;
+    }
+}
