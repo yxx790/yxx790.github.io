@@ -58,7 +58,7 @@ main>div {
 
 main>div>div {
     /* background-color: hsl(195, 39%, 69%); */
-    margin: 1dvh 1dvw 0;
+    margin: 1dvh 3dvw 0;
     height: 44dvh;
 }
 
@@ -68,6 +68,7 @@ p, label, input, div, select, textarea{
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0);
     /* display: inline; */
+    /* border: 0px; */
 
 }
 form>div{
@@ -76,7 +77,7 @@ form>div{
 }
 input, select:not(#userAge,#sex){
     width: 100%;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.7);
 }
 
 @media(orientation: landscape) {
@@ -86,7 +87,7 @@ input, select:not(#userAge,#sex){
 
     main>div>div {
         /* background-color: hsl(195, 39%, 69%); */
-        margin: 1dvh 1dvw 0 0;
+        margin: 1dvh 2dvw 0 0;
         height: 89dvh;
         width: 50dvw;
     }
