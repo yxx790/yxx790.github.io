@@ -1,7 +1,9 @@
 :root {
-    --bntFilterDay: brightness(100%) contrast(50%);
-    --bntFilterDayActive: invert(42%) sepia(93%) saturate(1352%) hue-rotate(260deg);
+    --bntFilter: brightness(100%) contrast(50%);
+    --bntFilterActive: invert(42%) sepia(93%) saturate(1352%) hue-rotate(260deg);
     --background: hsl(171, 100%, 97%);
+    --undertext: rgba(189, 154, 255, 0.356);
+    --text: rgb(0, 0, 0);
     --headmenu: hsl(216, 100%, 56%);
 }
 
@@ -33,13 +35,13 @@ body {
 }
 
 nav>div>img {
-    filter: var(--bntFilterDay);
+    filter: var(--bntFilter);
     height: 5dvh;
     margin-top: 2.5dvh;
 }
 
 .activeBtn>* {
-    filter: var(--bntFilterDayActive);
+    filter: var(--bntFilterActive);
 }
 
 [hidden] {
@@ -47,7 +49,6 @@ nav>div>img {
 }
 
 .page {
-    /* background-color: hsl(195, 39%, 69%); */
     height: 90dvh;
 }
 
@@ -63,20 +64,26 @@ main>div>div {
 }
 
 p, label, input, div, select, textarea{
-    font-family: monospace, sans-serif;
+    color: var(--text);
+    font-family: sans-serif;
     font-size: 2.5dvh;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0);
-    /* border: 0px; */
-
 }
+
+label, input, select, textarea{
+    padding: 5px 10px 5px 10px;
+    background-color: var(--undertext);
+    border: 0px solid black;
+    border-radius: 7px;
+}
+
 form>div{
     display: flex;
     margin-bottom: 1.5dvh;
 }
 input, select:not(#userAge,#sex){
     width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.7);
+
 }
 
 textarea{
@@ -98,8 +105,6 @@ textarea{
         width: 50dvw;
     }
     p, label, input, div, select, textarea{
-        font-family: monospace, sans-serif;
         font-size: 2.5dvw;
-        font-weight: bold;
     }
 }

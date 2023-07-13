@@ -45,10 +45,11 @@
                 <form action="">
                     <div>
 
-                        <input type="text" name="inputName" id="inputName" placeholder="имя">
+                        <input maxlength=20 type="text" name="inputName" id="inputName"
+                            placeholder=" имя">
 
                         <pre> </pre>
-
+                        
                         <select name="userAge" id="userAge">
                             <!-- <option value=""></option> -->
                             <!-- сюда вставляется список возрастов -->
@@ -62,16 +63,18 @@
                         </select>
 
                     </div>
+                    
                     <div>
 
                         <select id="region" name="region" list="regionList">
                             <option value="Регион">регион</option>
-                            <option value="Регипропроонапрапр">регпропрпопроапр</option>
+                            <option value="Регипропрапр">регпропрпроапр</option>
                             <option value="Регион">регион</option>
                             <option value="Регион">регион</option>
                         </select>
-
-                        <select id="city" name="city" list="cityList" placeholder="город">
+                        <pre> </pre>
+                        <select id="city" name="city" list="cityList"
+                            placeholder="город">
                             <option value="город">город</option>
                             <option value="Нижневартовск">Нижневартовск</option>
                             <option value="ЕКБ">ЕКБ</option>
@@ -79,7 +82,8 @@
                     </div>
 
                     <div>
-                        <textarea maxlength=10 name="inputComent" id="inputComent" rows="8" placeholder="раскажите о себе"></textarea>
+                        <textarea maxlength=200 name="inputComent" id="inputComent"
+                        rows="8" placeholder=" раскажите о себе"></textarea>
                         <!-- <input type="text" name="inputComent" id="inputComent" placeholder="раскажите о себе"> -->
                     </div>
                 </form>

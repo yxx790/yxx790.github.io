@@ -27,7 +27,8 @@ for (let age = 18; age < 100; age++) {
 
 document.querySelector("#colorScheme").innerHTML +=
     tg.colorScheme;
-document.querySelector("#colorScheme").innerHTML +=
-    tg.initDataUnsafe.user.id;
+document.querySelector("#id").innerHTML +=
+    Telegram.WebApp.initData;
+    // tg.initDataUnsafe.user.id;
 
 // window.Telegram.WebApp.expand();
