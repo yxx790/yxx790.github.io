@@ -16,4 +16,9 @@ for (let age = 18; age < 100; age++) {
         `<option value="${age}">${age}</option>`
 }
 
-document.querySelector("#id").innerHTML = WebAppUser.id;
+window.Telegram.WebApp.expand();
+
+document.querySelector("#colorScheme").innerHTML +=
+    window.Telegram.WebApp.
+document.querySelector("#colorScheme").innerHTML +=
+    window.Telegram.WebApp.colorScheme;
