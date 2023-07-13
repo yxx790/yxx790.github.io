@@ -79,6 +79,13 @@ input, select:not(#userAge,#sex){
     border: 1px solid rgba(0, 0, 0, 0.7);
 }
 
+textarea{
+    width: 100%;
+    height: auto;
+    resize: none;
+
+    
+}
 @media(orientation: landscape) {
     main>div {
         flex-direction: row;
