@@ -40,6 +40,16 @@ if ("sdf") { console.log(true) };
 const s = '123, 3213,4234 2343';
 console.log(s.replace(/, /,",").replace(/ /,",").split(','))
 
+var myString = 'Привет 1 мир. Предложение номер 2.';
+var splits = myString.split(/(\d)/);
+console.log(splits);
+
+var names = 'Гарри Трамп ;Фрэд Барни; Хелен Ригби ; Билл Абель ;Крис Ханд ';
+console.log(names);
+var re = /\s*;\s*/;
+var nameList = names.split(re);
+console.log(nameList);
+
 
 getIP()
 function getIP() {
