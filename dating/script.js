@@ -1,7 +1,7 @@
 'use strict';
-const tele = window.Telegram.WebApp; //Initializes the TELEGRAM BOT and
+const tg = window.Telegram.WebApp; //Initializes the TELEGRAM BOT and
   //Gets the user's Telegram ID from the Telegram API
-tele.expand(); //Expands the app on the users' phone to 100% height
+tg.expand(); //Expands the app on the users' phone to 100% height
 
 
 
@@ -25,7 +25,9 @@ for (let age = 18; age < 100; age++) {
 
 
 
-document.querySelector("#colorScheme").innerHTML += tele.initDataUnsafe.user.id
-document.querySelector("#colorScheme").innerHTML += tele.colorScheme;
+document.querySelector("#colorScheme").innerHTML +=
+    tg.colorScheme;
+document.querySelector("#colorScheme").innerHTML +=
+    tg.initDataUnsafe.user.id;
 
 // window.Telegram.WebApp.expand();
