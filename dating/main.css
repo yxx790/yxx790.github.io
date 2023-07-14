@@ -105,7 +105,7 @@ textarea{
         height: 89dvh;
         width: 50dvw;
     }
-    p, label, input, div, select, textarea{
+    p, pre, label, input, div, select, textarea{
         font-size: 2.5dvw;
     }
 }
