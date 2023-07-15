@@ -5,13 +5,13 @@ if (tg?.initDataUnsafe?.user?.id) {
     document.querySelector("header").remove();
     // const br = document.createElement("br");
     // document.querySelector("#BJ").prepend(br);
-    document.querySelector("h3").style.fontSize = "4dvh";
+    document.querySelector("h3").style.fontSize = "3dvh";
+    document.querySelector("h3").style.marginTop ="2dvh";
 }
 if (tg?.initDataUnsafe?.user?.username) {
     document.querySelector("#yourName").textContent =
         tg.initDataUnsafe.user.username;
 }
-
 
 let usedDeck = [],
     yourPack = [],
