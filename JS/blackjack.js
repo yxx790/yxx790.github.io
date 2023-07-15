@@ -3,7 +3,9 @@ const tg = window.Telegram.WebApp;
 tg.expand();
 if (tg.initDataUnsafe.user.username) {
     document.querySelector("#yourName").textContent =
-        tg.initDataUnsafe.user.username}
+        tg.initDataUnsafe.user.username;
+    document.querySelector("header").remove;
+}
 let usedDeck = [],
     yourPack = [],
     catsPack = [],
