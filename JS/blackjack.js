@@ -4,7 +4,7 @@ tg.expand();
 if (tg.initDataUnsafe.user.username) {
     document.querySelector("#yourName").textContent =
         tg.initDataUnsafe.user.username;
-    document.querySelector("header").remove;
+    document.querySelector("header").remove();
 }
 let usedDeck = [],
     yourPack = [],
