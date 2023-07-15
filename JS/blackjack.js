@@ -1,7 +1,7 @@
 "use strict";
-const tg = window.Telegram.WebApp;
+const tg = window?.Telegram?.WebApp;
 tg.expand();
-if (tg.initDataUnsafe.user.username) {
+if (tg?.initDataUnsafe?.user?.username) {
     document.querySelector("#yourName").textContent =
         tg.initDataUnsafe.user.username;
     document.querySelector("header").remove();
