@@ -4,8 +4,12 @@ tg.expand();
 if (tg?.initDataUnsafe?.user?.username) {
     document.querySelector("#yourName").textContent =
         tg.initDataUnsafe.user.username;
-    document.querySelector("header").innerHTML="<br>";
+    document.querySelector("header").remove();
+    const br = document.createElement("br");
+    document.querySelector("#BJ").prepend(br);
+
 }
+
 let usedDeck = [],
     yourPack = [],
     catsPack = [],

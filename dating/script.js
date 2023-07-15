@@ -1,8 +1,8 @@
 'use strict';
 const tg = window.Telegram.WebApp; //Initializes the TELEGRAM BOT and
+//Gets the user's Telegram ID from the Telegram API
 // screen.orientation.lock(ORIENTATION);
 
-  //Gets the user's Telegram ID from the Telegram API
 tg.expand(); //Expands the app on the users' phone to 100% height
 
 
