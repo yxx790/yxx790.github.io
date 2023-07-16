@@ -8,6 +8,7 @@ const consol = document.querySelector("#consol");
 consol.innerHTML +="colorScheme = " + tg?.colorScheme;
 consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
 consol.innerHTML +="<br> initData = " + tg?.initData;
+consol.innerHTML +="<br> initData.language_code = " + tg?.initData?.language_code;
 
 const allHeadBtns = document.querySelectorAll('nav > div');
 const allPages = document.querySelectorAll('main > div');
@@ -24,7 +25,3 @@ for (let age = 18; age < 100; age++) {
     document.querySelector("#userAge").innerHTML +=
         `<option value="${age}">${age}</option>`
 }
-
-
-
-
