@@ -7,7 +7,7 @@ tg?.expand(); //Expands the app on the users' phone to 100% height
 const consol = document.querySelector("#consol");
 consol.innerHTML +="colorScheme = " + tg?.colorScheme;
 consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
-// consol.innerHTML +="<br> initData = " + tg?.initData;
+consol.innerHTML +="<br> initData = " + tg?.initData;
 consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;//не работает
 
 
