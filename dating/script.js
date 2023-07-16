@@ -5,9 +5,9 @@ const tg = window?.Telegram?.WebApp; //Initializes the TELEGRAM BOT and
 tg?.expand(); //Expands the app on the users' phone to 100% height
 
 const consol = document.querySelector("#consol");
-consol.innerHTML +="<br> colorScheme = " + tg?.colorScheme;
-consol.textContent +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
-consol.textContent +="<br> initData = " + tg?.initData;
+consol.innerHTML +="colorScheme = " + tg?.colorScheme;
+consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
+consol.innerHTML +="<br> initData = " + tg?.initData;
 
 const allHeadBtns = document.querySelectorAll('nav > div');
 const allPages = document.querySelectorAll('main > div');
