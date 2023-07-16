@@ -14,7 +14,8 @@ consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;
 
 if (tg?.colorScheme == "dark"){
     consol.innerHTML +="<br> Enable dark theme2";
-    document.documentElement.style.setProperty('--background', '#242424');
+    document.documentElement.style.setProperty('--background', '#252550');
+    document.documentElement.style.setProperty('--text', '#f0f0f0');
 }
 
 const allHeadBtns = document.querySelectorAll('nav > div');
