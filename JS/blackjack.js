@@ -1,6 +1,6 @@
 "use strict";
 const tg = window?.Telegram?.WebApp;
-tg.expand();
+tg?.expand();
 if (tg?.initDataUnsafe?.user?.id) {
     document.querySelector("header").remove();
     // const br = document.createElement("br");
