@@ -10,6 +10,12 @@ consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.
 consol.innerHTML +="<br> initData = " + tg?.initData;
 consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;
 
+
+
+if (tg?.colorScheme == "dark"){
+    consol.innerHTML +="<br> Enable dark theme";
+}
+
 const allHeadBtns = document.querySelectorAll('nav > div');
 const allPages = document.querySelectorAll('main > div');
 allHeadBtns.forEach((btn, index) => {
