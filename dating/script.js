@@ -8,14 +8,14 @@ const consol = document.querySelector("#consol");
 consol.innerHTML +="colorScheme = " + tg?.colorScheme;
 consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
 consol.innerHTML +="<br> initData = " + tg?.initData;
-consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;
+consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;//не работает
 
 
 
 if (tg?.colorScheme == "dark"){
-    consol.innerHTML +="<br> Enable dark theme2";
+    consol.innerHTML +="<br> Enable dark theme";
     document.documentElement.style.setProperty('--background', '#252550');
-    document.documentElement.style.setProperty('--text', '#f0f0f0');
+    document.documentElement.style.setProperty('--text', '#e0e0e0');
 }
 
 const allHeadBtns = document.querySelectorAll('nav > div');
