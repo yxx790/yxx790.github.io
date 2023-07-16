@@ -8,7 +8,7 @@ const consol = document.querySelector("#consol");
 consol.innerHTML +="colorScheme = " + tg?.colorScheme;
 consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
 consol.innerHTML +="<br> initData = " + tg?.initData;
-consol.innerHTML +="<br> initData.language_code = " + tg?.initData?.language_code;
+consol.innerHTML +="<br> WebAppUser.id = " + tg?.WebAppUser?.id;
 
 const allHeadBtns = document.querySelectorAll('nav > div');
 const allPages = document.querySelectorAll('main > div');
