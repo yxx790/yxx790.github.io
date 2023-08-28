@@ -16,6 +16,7 @@ if (tg?.colorScheme == "dark"){
     consol.innerHTML +="<br> Enable dark theme";
     document.documentElement.style.setProperty('--background', '#252550');
     document.documentElement.style.setProperty('--text', '#e0e0e0');
+    // document.querySelector(":root");
 }
 
 const allHeadBtns = document.querySelectorAll('nav > div');
