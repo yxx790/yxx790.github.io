@@ -96,7 +96,8 @@ function getGeolocation() {
     function success({ coords }) {
         const { latitude, longitude } = coords
         console.log('latitude', latitude, 'longitude', longitude)
-        document.querySelector("#p5").innerHTML = 'latitude ' + latitude + '<br>' + 'longitude ' + longitude;
+        document.querySelector("#p5").innerHTML =
+            'latitude ' + latitude + '<br>' + 'longitude ' + longitude;
         weatherRequest(latitude, longitude)
         weatherForecast(latitude, longitude)
     }
@@ -109,7 +110,8 @@ function getGeolocation() {
 
 function weatherRequest(latitude, longitude) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${appid}`, true);
+    xhr.open("GET", `https://api.openweathermap.org/data/2.5/\
+weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${appid}`, true);
     xhr.onload = function () {
         if (xhr.status == 200) {
             const response = JSON.parse(this.response)
@@ -125,7 +127,8 @@ function weatherRequest(latitude, longitude) {
 }
 
 function weatherForecast(latitude, longitude) {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${appid}`)
+    fetch(`https://api.openweathermap.org/data/2.5/\
+forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${appid}`)
         .then(response => response.json())
         .then(obj => {
             console.log(obj);
