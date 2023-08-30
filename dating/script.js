@@ -10,6 +10,9 @@ consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.
 consol.innerHTML +="<br> initData = " + tg?.initData;
 consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;//не работает
 
+document.querySelector('#profile').addEventListener('click', () => {
+    document.querySelector("#consol").toggleAttribute('hidden')
+});
 
 
 if (tg?.colorScheme == "dark"){
