@@ -5,14 +5,14 @@ const tg = window?.Telegram?.WebApp; //Initializes the TELEGRAM BOT and
 tg?.expand(); //Expands the app on the users' phone to 100% height
 
 const consol = document.querySelector("#consol");
-consol.innerHTML +="colorScheme = " + tg?.colorScheme;
-consol.innerHTML +="<br> initDataUnsafe.user.id = " + tg?.initDataUnsafe?.user?.id;
-consol.innerHTML +="<br> initData = " + tg?.initData;
-consol.innerHTML +="<br> WebAppUser.id = " + window?.Telegram?.WebAppUser?.id;//не работает
+function print(data){consol.innerHTML += data +'<br>'};
+
+print('colorScheme = ' + tg?.colorScheme)
+print('initDataUnsafe.user.id = ' + tg?.initDataUnsafe?.user?.id)
+print('initData = ' + tg?.initData)
 
 document.querySelector('#profile').addEventListener('click', () => {
-    document.querySelector("#consol").toggleAttribute('hidden')
-});
+    consol.toggleAttribute('hidden')});
 
 
 if (tg?.colorScheme == "dark"){
