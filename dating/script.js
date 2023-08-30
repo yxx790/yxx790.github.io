@@ -16,9 +16,9 @@ document.querySelector('#profile').addEventListener('click', () => {
 
 
 if (tg?.colorScheme == "dark"){
-    consol.innerHTML +="<br> Enable dark theme";
     document.documentElement.style.setProperty('--background', '#252550');
     document.documentElement.style.setProperty('--text', '#e0e0e0');
+    print('Dark theme enabled');
     // document.querySelector(":root");
 }
 
@@ -30,6 +30,7 @@ allHeadBtns.forEach((btn, index) => {
         allPages[index].removeAttribute("hidden");
         allHeadBtns.forEach(b => { b.classList.remove("activeBtn") });
         btn.classList.add("activeBtn");
+        print(`${btn.id} activated`);
     })
 })
 
