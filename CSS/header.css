@@ -8,6 +8,7 @@ header {
     border-color: #70ffa7;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 
 header>div{
