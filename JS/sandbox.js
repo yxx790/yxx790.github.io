@@ -15,7 +15,7 @@ console.log("b=" + b()); console.log("c=" + c()); console.log("b=" + b());
 console.log("c=" + c()); console.log("c=" + c()); console.log("b=" + b());
 
 const video = document.querySelector('video');
-navigator?.mediaDevices?.getUserMedia({video:true}).then(mediaStream=>{
+navigator.mediaDevices.getUserMedia({video:true}).then(mediaStream=>{
     video.srcObject = mediaStream;
 }).catch(err => {console.log('err: ', err)})
 
