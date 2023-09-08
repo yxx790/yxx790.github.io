@@ -14,6 +14,11 @@ const c = varCreator();//в пер присваивается innerFunc
 console.log("b=" + b()); console.log("c=" + c()); console.log("b=" + b());
 console.log("c=" + c()); console.log("c=" + c()); console.log("b=" + b());
 
+const video = document.querySelector('video');
+navigator.mediaDevices.getDisplayMedia({video:true}).then(mediaStream=>{
+    video.srcObject = mediaStream;
+})
+
 
 // const okCancel = confirm("OK or Cancel");//результат true or false
 // alert(okCancel);
