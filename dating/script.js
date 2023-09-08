@@ -34,7 +34,7 @@ allHeadBtns.forEach((btn, index) => {
 const video = document.querySelector('video');
 navigator.mediaDevices.getUserMedia({video:true}).then(mediaStream=>{
     video.srcObject = mediaStream;
-}).catch(err => {console.log('err: ', err)})
+}).catch(err => {print('err: ', err)})
 
 for (let age = 18; age < 100; age++) {
     document.querySelector("#userAge").innerHTML +=
