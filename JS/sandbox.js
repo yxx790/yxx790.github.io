@@ -1,5 +1,10 @@
 "use strict";
 
+let a = 1
+console.log(a.__proto__===Number.prototype)
+//prototype есть только у f и class
+//__proto__ === prototype функции конструктора
+
 function varCreator() {
     let a = 0;
     function innerFunc() {//в лексич окруж фнкц будет
