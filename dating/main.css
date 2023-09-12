@@ -15,42 +15,46 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--background);
-}
-
-.headGroup {
-    display: flex;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
-    height: 10dvh;
-
-    /* background-color: var(--headmenu); */
-}
-
-.headGroup>div {
-    flex: 1 1 0;
-    text-align: center;
-    overflow: hidden;
-    font-size: 6.8dvh;
-}
-
-nav>div>img {
-    filter: var(--bntFilter);
-    height: 5dvh;
-    margin-top: 2.5dvh;
-}
-
-.activeBtn>* {
-    filter: var(--bntFilterActive);
-}
-
 [hidden] {
     display: none;
 }
 
-.page {
-    height: 90dvh;
+body {
+    background-color: var(--background);
+
+    .headGroup {
+        display: flex;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+        height: 10dvh;
+
+        .activeBtn>* {
+            filter: var(--bntFilterActive);
+        }
+
+        >div {
+            flex: 1 1 0;
+            text-align: center;
+            overflow: hidden;
+            font-size: 6.8dvh;
+
+            >img {
+                filter: var(--bntFilter);
+                height: 5dvh;
+                margin-top: 2.5dvh;
+            }
+        }
+    }
+
+    .page {
+        height: 90dvh;
+    }
+
 }
+
+
+
+
+
 
 main>div {
     display: flex;
@@ -84,6 +88,7 @@ form>div{
     display: flex;
     margin-bottom: 1.5dvh;
 }
+
 input, select:not(#userAge,#sex){
     width: 100%;
 
@@ -94,8 +99,8 @@ textarea{
     height: auto;
     resize: none;
 
-    
 }
+
 @media(orientation: landscape) {
     main>div {
         flex-direction: row;
