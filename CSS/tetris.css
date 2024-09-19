@@ -1,0 +1,49 @@
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+*::selection{ /*задает цвет выделения прозрачным*/
+    background-color:rgba(0, 0, 0, 0);
+} 
+
+.line1{
+    display: flex;
+    height: 100dvh;
+}
+
+.div1{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3dvw;
+    background-color: rgb(255, 206, 127);
+}
+.div2{
+    display: inline-flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 97dvw;
+    background-color: rgb(255, 153, 127);
+}
+
+.field{
+    height: 95%;
+    border: solid;
+}
+.field>div{
+    border: solid;
+    align-items: center;
+    justify-content: center;
+    height: 5%
+}
+.field>div>div{
+    border: solid;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
